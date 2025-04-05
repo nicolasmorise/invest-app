@@ -1,0 +1,179 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Arimo:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+/* Header */
+header {
+    background-color: black;
+    padding: 15px 0;
+}
+
+.header-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.header-class img {
+    height: 100px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #00ff00;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero img {
+    max-width: 200px;
+}
+
+.hero h2 {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Tables */
+.stocks, .crypto {
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 28px;
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #00ff00;
+}
+
+th {
+    background: #0f0f0f;
+    color: #00ff00;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: black;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-class {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+      display: none; /* Initially hidden */
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: black;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .menu ul {
+      flex-direction: column;
+      padding: 0;
+  }
+
+  .menu ul li {
+      padding: 15px;
+  }
+
+  .menu-toggle {
+      display: block; /* Show hamburger icon */
+  }
+
+  /* Show menu when active */
+  .menu.active {
+      display: flex;
+  }
+
+
+    .menu ul li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        max-width: 150px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
