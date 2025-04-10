@@ -83,6 +83,58 @@ header {
     margin-top: 20px;
 }
 
+.search-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+  
+  #searchInput {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Arimo', sans-serif;
+  }
+  
+  #searchBtn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Didact Gothic', sans-serif;
+  }
+  
+  #searchBtn:hover {
+    background-color: #00ff00;
+    color: black;
+  }
+  
+  #search-results {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 90%;
+    overflow-x: auto;
+    font-family: 'Arimo', sans-serif;
+  }
+  
+  #search-results table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  #search-results th,
+  #search-results td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+
 /* Tables */
 .stocks, .crypto {
     max-width: 1000px;

@@ -8,16 +8,17 @@
     <title>Let's Invest</title>
     <script src="./src/main.js" type="module"></script>
     <script src="./src/api.js" type="module"></script>
+    <script src="./src/search.js" type="module"></script>
   </head>
   <body>
     <header>
-      <div class="header-class">
+      <div class="header-class" id="main-header">
         <img src="public/logo.png" alt="Logo">
         <button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
         <div class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">My Watchlist</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="src/watchlist.html">My Watchlist</a></li>
           </ul>
         </div>
       </div>
@@ -29,6 +30,26 @@
           <h2>Get to know the best trends in the stock and crypto market</h2>
       </div>
 
+      <div class="search-section">
+        <input type="text" id="searchInput" placeholder="Search by ticker symbol (e.g. AAPL, BTC)" />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div id="search-results">
+        <h2>Search Results</h2>
+        <table>
+          <tr class="categories">
+            <th>Name</th>
+            <th>Ticker</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>%Change</th>
+          </tr>
+          <tbody id="searchData">
+          </tbody>
+        </table>
+      </div>
+      
       <div class="stocks">
         <h2>Stocks</h2>
         <table>
@@ -60,7 +81,7 @@
         </table>
       </div>
     </main>
-    <footer>
+    <footer id="main-footer">
       &copy; No Copyright
     </footer>
     
