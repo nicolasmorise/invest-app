@@ -15,3 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+          const menu = document.querySelector('.menu');
+          menu.classList.toggle('active');
+      });
+  }
+});

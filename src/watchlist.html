@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="icon" href="../public/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/style.css">
+    <title>My Watchlist | Let's Invest</title>
+    <script src="../src/main.js" type="module"></script>
+    <script src="../src/watchlist.js" type="module"></script>
+  </head>
+  <body>
+    <header id="dynamic-header">
+      <!-- Header will be loaded dynamically -->
+    </header>
+    
+    <main>
+      <div class="hero">
+          <h2>My Investment Watchlist</h2>
+          <p>Track your favorite stocks and cryptocurrencies</p>
+      </div>
+
+      <div class="search-section">
+        <input type="text" id="watchlistSearchInput" placeholder="Add to watchlist (e.g. AAPL, BTC)" />
+        <button id="addToWatchlistBtn">Add</button>
+      </div>
+
+      <div class="watchlist-container">
+        <div class="stocks-watchlist">
+          <h2>My Stock Watchlist</h2>
+          <table>
+            <thead>
+              <tr class="categories">
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>%Change</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="stockWatchlistData">
+              <!-- Stock watchlist items will appear here -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="crypto-watchlist">
+          <h2>My Crypto Watchlist</h2>
+          <table>
+            <thead>
+              <tr class="categories">
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>%Change</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="cryptoWatchlistData">
+              <!-- Crypto watchlist items will appear here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="popular-cryptos">
+        <h3>Popular Cryptocurrencies</h3>
+        <div class="crypto-buttons">
+          <button class="crypto-option" data-id="bitcoin">Bitcoin (BTC)</button>
+          <button class="crypto-option" data-id="ethereum">Ethereum (ETH)</button>
+          <button class="crypto-option" data-id="cardano">Cardano (ADA)</button>
+          <button class="crypto-option" data-id="solana">Solana (SOL)</button>
+          <button class="crypto-option" data-id="ripple">Ripple (XRP)</button>
+          <button class="crypto-option" data-id="dogecoin">Dogecoin (DOGE)</button>
+          <button class="crypto-option" data-id="polkadot">Polkadot (DOT)</button>
+          <button class="crypto-option" data-id="avalanche">Avalanche (AVAX)</button>
+        </div>
+      </div>
+    </main>
+    
+    <footer id="dynamic-footer">
+      <!-- Footer will be loaded dynamically -->
+    </footer>
+  </body>
+</html>

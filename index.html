@@ -9,19 +9,10 @@
     <script src="./src/main.js" type="module"></script>
     <script src="./src/api.js" type="module"></script>
     <script src="./src/search.js" type="module"></script>
+    <script src="./src/watchlist.js" type="module"></script>
   </head>
   <body>
-    <header>
-      <div class="header-class" id="main-header">
-        <img src="public/logo.png" alt="Logo">
-        <button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
-        <div class="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="src/watchlist.html">My Watchlist</a></li>
-          </ul>
-        </div>
-      </div>
+    <header id="dynamic-header">
     </header>
     
     <main>
@@ -38,51 +29,57 @@
       <div id="search-results">
         <h2>Search Results</h2>
         <table>
-          <tr class="categories">
-            <th>Name</th>
-            <th>Ticker</th>
-            <th>Price</th>
-            <th>Change</th>
-            <th>%Change</th>
-          </tr>
-          <tbody id="searchData">
-          </tbody>
+            <thead>
+                <tr class="categories">
+                    <th>Name</th>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                    <th>%Change</th>
+                </tr>
+            </thead>
+            <tbody id="searchData">
+                <!-- Search results will appear here -->
+            </tbody>
         </table>
-      </div>
-      
-      <div class="stocks">
-        <h2>Stocks</h2>
+    </div>
+    
+    <div class="stocks">
+        <h2>Top 5 Stocks</h2>
         <table>
-          <tr class="categories">
-            <th>Name</th>
-            <th>Ticker</th>
-            <th>Price</th>
-            <th>Change</th>
-            <th>%Change</th>
-          </tr>
-          <tr class="data">
-
-          </tr>
+            <thead>
+                <tr class="categories">
+                    <th>Name</th>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                    <th>%Change</th>
+                </tr>
+            </thead>
+            <tbody class="data">
+                <!-- Stock data will appear here -->
+            </tbody>
         </table>
-      </div>
-      <div class="crypto">
-        <h2>Crypto</h2>
+    </div>
+    <div class="crypto">
+        <h2>Top 5 Cryptos</h2>
         <table>
-          <tr class="categories">
-            <th>Name</th>
-            <th>Ticker</th>
-            <th>Price</th>
-            <th>Change</th>
-            <th>%Change</th>
-          </tr>
-          <tr class="data">
-            
-          </tr>
+            <thead>
+                <tr class="categories">
+                    <th>Name</th>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                    <th>%Change</th>
+                </tr>
+            </thead>
+            <tbody class="data">
+                <!-- Crypto data will appear here -->
+            </tbody>
         </table>
-      </div>
+    </div>
     </main>
-    <footer id="main-footer">
-      &copy; No Copyright
+    <footer id="dynamic-footer">
     </footer>
     
   </body>
