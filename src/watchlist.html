@@ -5,22 +5,35 @@
     <link rel="icon" type="icon" href="../public/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>My Watchlist | Let's Invest</title>
     <script src="../src/main.js" type="module"></script>
     <script src="../src/watchlist.js" type="module"></script>
+    <style>
+      #searchSuggestions {
+        position: absolute;
+        background: white;
+        border: 1px solid #ddd;
+        width: calc(100% - 40px);
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 100;
+      }
+      .search-suggestion {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .search-suggestion:hover {
+        background-color: #f5f5f5;
+      }
+      .search-section {
+        position: relative;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <div class="header-class" id="main-header">
-        <img src="public/logo.png" alt="Logo">
-        <button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
-        <div class="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="src/watchlist.html">My Watchlist</a></li>
-          </ul>
-        </div>
-      </div>
+    <header id="dynamic-header">
+      <!-- Header will be loaded dynamically -->
     </header>
     
     <main>
@@ -30,13 +43,14 @@
       </div>
 
       <div class="search-section">
-        <input type="text" id="watchlistSearchInput" placeholder="Add to watchlist (e.g. AAPL, BTC)" />
+        <input type="text" id="watchlistSearchInput" placeholder="Add to watchlist (e.g. AAPL, bitcoin)" />
         <button id="addToWatchlistBtn">Add</button>
+        <div id="searchSuggestions"></div>
       </div>
 
       <div class="watchlist-container">
         <div class="stocks-watchlist">
-          <h2>My Stock Watchlist</h2>
+          <h2><i class="fas fa-chart-line"></i> My Stock Watchlist</h2>
           <table>
             <thead>
               <tr class="categories">
@@ -55,7 +69,7 @@
         </div>
 
         <div class="crypto-watchlist">
-          <h2>My Crypto Watchlist</h2>
+          <h2><i class="fab fa-btc"></i> My Crypto Watchlist</h2>
           <table>
             <thead>
               <tr class="categories">
@@ -88,8 +102,8 @@
       </div>
     </main>
     
-    <footer>
-      &copy; No Copyright
+    <footer id="dynamic-footer">
+      <!-- Footer will be loaded dynamically -->
     </footer>
   </body>
 </html>

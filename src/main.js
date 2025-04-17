@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove("active");
     }
   });
-});
+}); 
 
 // Mobile menu toggle functionality
 document.addEventListener('DOMContentLoaded', () => {

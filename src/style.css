@@ -259,6 +259,213 @@ footer {
     background-color: #333;
   }
 
+  /* Search Section Styling */
+.search-section {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+  }
+  
+  #watchlistSearchInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #watchlistSearchInput:focus {
+    border-color: #6200ee;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(98, 0, 238, 0.2);
+  }
+  
+  #addToWatchlistBtn {
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #addToWatchlistBtn:hover {
+    background-color: #7c4dff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  #addToWatchlistBtn:active {
+    transform: translateY(0);
+  }
+  
+  /* Search Suggestions Dropdown */
+  #searchSuggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none;
+  }
+  
+  .search-section.active #searchSuggestions {
+    display: block;
+  }
+  
+  .search-suggestion {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .search-suggestion:last-child {
+    border-bottom: none;
+  }
+  
+  .search-suggestion:hover {
+    background-color: #f3e5ff;
+    color: #6200ee;
+  }
+  
+  .search-suggestion i {
+    margin-right: 10px;
+    color: #6200ee;
+  }
+  
+  /* Active state for search input when dropdown is visible */
+  .search-section.active #watchlistSearchInput {
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+  }
+  
+  /* Popular Cryptos Buttons */
+  .crypto-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .crypto-option {
+    background-color: #f3e5ff;
+    color: #6200ee;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .crypto-option:hover {
+    background-color: #d1c4e9;
+    transform: translateY(-2px);
+  }
+  
+  .crypto-option:active {
+    transform: translateY(0);
+  }
+
+  /* Enhanced Dropdown Styling */
+.suggestion-header {
+    padding: 8px 15px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    color: #6200ee;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+}
+
+.search-suggestion {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.search-suggestion i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.stock-suggestion {
+    color: #333;
+}
+
+.stock-suggestion:hover {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.stock-suggestion i {
+    color: #1565c0;
+}
+
+.crypto-suggestion {
+    color: #333;
+}
+
+.crypto-suggestion:hover {
+    background-color: #f3e5ff;
+    color: #6200ee;
+}
+
+.crypto-suggestion i {
+    color: #6200ee;
+}
+
+/* Scrollable dropdown */
+#searchSuggestions {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar */
+#searchSuggestions::-webkit-scrollbar {
+    width: 8px;
+}
+
+#searchSuggestions::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 0 8px 0;
+}
+
+#searchSuggestions::-webkit-scrollbar-thumb {
+    background: #d1c4e9;
+    border-radius: 4px;
+}
+
+#searchSuggestions::-webkit-scrollbar-thumb:hover {
+    background: #b39ddb;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-class {

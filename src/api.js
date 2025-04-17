@@ -77,39 +77,32 @@ async function fetchCryptoData() {
     }
 }
 
-async function fetchCryptoDataById(cryptoId, isSearch = false) {
-    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=usd`;
-  
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-  
-      if (!data[cryptoId]) {
-        console.warn("Crypto not found:", cryptoId);
-        return false;
-      }
-  
-      const row = `
-        <tr>
-            <td>${cryptoId.charAt(0).toUpperCase() + cryptoId.slice(1)}</td>
-            <td>${cryptoId.toUpperCase()}</td>
-            <td>$${data[cryptoId].usd}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-      `;
-  
-      if (isSearch) {
-        document.getElementById("searchData").innerHTML = row;
-        return true;
-      } else {
-        cryptoTable.innerHTML += row;
-      }
-  
-    } catch (error) {
-      console.error("Error fetching crypto by ID:", error);
-      return false;
-    }
+// Inside api.js
+export async function fetchCryptoData(query) {
+  try {
+    const response = await fetch(`https://api.coingecko.com/api/v3/search?query=${query}`);
+    const data = await response.json();
+    const formattedData = data.coins.map(coin => ({
+      id: coin.id,
+      name: coin.name,
+      symbol: coin.symbol,
+    }));
+
+    // Return data with the needed structure (including data attributes for DOM)
+    return {
+      ...data,
+      formatted: formattedData,
+      html: formattedData.map(crypto => `
+        <div class="result-item" data-symbol="${crypto.symbol}" data-name="${crypto.name}" data-type="crypto">
+          ${crypto.name} (${crypto.symbol.toUpperCase()}) 
+          <button class="add-to-watchlist">+</button>
+        </div>
+      `).join('')
+    };
+  } catch (error) {
+    console.error("Error fetching crypto data:", error);
+    return { coins: [], html: "" };
+  }
 }
 
 // Load data when the page loads
